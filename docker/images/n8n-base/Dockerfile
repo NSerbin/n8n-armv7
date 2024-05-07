@@ -4,7 +4,7 @@ ARG NODE_VERSION=18
 FROM node:${NODE_VERSION}-alpine as builder
 
 # Install fonts
-RUN	\
+RUN \
 	apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
 	update-ms-fonts && \
 	fc-cache -f && \
@@ -24,7 +24,7 @@ COPY package.json ./
 RUN corepack enable && corepack prepare --activate
 
 # Cleanup
-RUN	rm -rf /lib/apk/db /var/cache/apk/ /tmp/* /root/.npm /root/.cache/node /opt/yarn*
+RUN rm -rf /lib/apk/db /var/cache/apk/ /tmp/* /root/.npm /root/.cache/node /opt/yarn*
 
 # 2. Start with a new clean image and copy over the added files into a single layer
 FROM node:${NODE_VERSION}-alpine
