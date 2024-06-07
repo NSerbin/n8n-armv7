@@ -17,3 +17,4 @@ jobs:
       docker-architecture: linux/arm/v7
       repository-name: n8n-base-armv7
     secrets: inherit
+
