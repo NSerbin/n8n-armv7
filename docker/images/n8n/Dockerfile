@@ -10,7 +10,7 @@ ENV NODE_ENV=production
 ENV N8N_RELEASE_TYPE=stable
 RUN set -eux; \
 	apk --no-cache add --virtual build-dependencies python3 build-base && \
-	npm install -g --omit=dev n8n@${N8N_VERSION} --ignore-scripts && \
+	npm install -g --omit=dev n8n@1.42.1 --ignore-scripts && \
 	apk del build-dependencies && \
 	npm rebuild --prefix=/usr/local/lib/node_modules/n8n sqlite3 && \	
 	rm -rf /usr/local/lib/node_modules/n8n/node_modules/@n8n/chat && \
