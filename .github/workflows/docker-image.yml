@@ -16,5 +16,6 @@ jobs:
       dockerfile-path: ./docker/images/n8n
       docker-architecture: linux/arm/v7
       repository-name: n8n-armv7
+      node-version: 20
     secrets: inherit
 
