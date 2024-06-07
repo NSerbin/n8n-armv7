@@ -18,3 +18,4 @@ jobs:
       repository-name: n8n-base-armv7
       node-version: 20      
     secrets: inherit
+
