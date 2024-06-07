@@ -3,7 +3,7 @@ ARG NODE_VERSION=20
 FROM koopernic/n8n-base-armv7:${NODE_VERSION}
 
 ARG N8N_VERSION=1.42.1
-RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
+#RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
 
 ENV N8N_VERSION=${N8N_VERSION}
 ENV NODE_ENV=production
