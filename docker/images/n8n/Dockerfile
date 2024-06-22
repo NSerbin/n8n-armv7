@@ -13,7 +13,7 @@ ENV N8N_RELEASE_TYPE=stable
 SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 
 RUN set -eux; \
-    npm install -g --omit=dev n8n@${N8N_VERSION} --ignore-scripts && \
+    npm install --no-audit -g --omit=dev n8n@${N8N_VERSION} --ignore-scripts && \
     npm rebuild --prefix=/usr/local/lib/node_modules/n8n sqlite3 && \
     rm -rf /usr/local/lib/node_modules/n8n/node_modules/@n8n/chat && \
     rm -rf /usr/local/lib/node_modules/n8n/node_modules/n8n-design-system && \
