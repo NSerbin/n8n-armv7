@@ -17,5 +17,5 @@ jobs:
       docker-architecture: linux/arm/v7
       repository-name: n8n-armv7
       node-version: 20
-      linter-fail: true      
+      linter-fail: true
     secrets: inherit
