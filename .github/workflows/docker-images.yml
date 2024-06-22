@@ -19,5 +19,5 @@ jobs:
       node-version: 20
       linter-fail: true
       linter-verbose: true
-      linter-format: sarif
+      linter-format: tty
     secrets: inherit
