@@ -19,3 +19,4 @@ jobs:
       node-version: 20
       linter-fail: true
     secrets: inherit
+
