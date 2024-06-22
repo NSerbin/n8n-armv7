@@ -18,5 +18,7 @@ jobs:
       repository-name: n8n-base-armv7
       node-version: 20
       linter-fail: true
+      linter-verbose: true
+      linter-format: json
     secrets: inherit
 
