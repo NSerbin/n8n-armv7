@@ -30,5 +30,3 @@ RUN \
 ENV SHELL /bin/sh
 USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
-
-
