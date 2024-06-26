@@ -5,7 +5,9 @@ FROM node:${NODE_VERSION}-slim as builder
 
 # Install fonts
 RUN apt-get update && apt-get install -y \
-        ttf-mscorefonts-installer fontconfig && \
+        fontconfig wget && \
+    wget -q https://github.com/hshelbur/ttf-mscorefonts-installer/releases/download/v0.0.0/ttf-mscorefonts-installer_3.7_all.deb && \
+    dpkg -i ttf-mscorefonts-installer_3.7_all.deb || apt-get install -f -y && \
     fc-cache -f && \
     rm -rf /var/lib/apt/lists/*
 
@@ -14,7 +16,7 @@ RUN apt-get update && apt-get install -y \
         git openssh-client graphicsmagick tini tzdata ca-certificates libc6-compat jq && \
     rm -rf /var/lib/apt/lists/*
 
-# Update npm and install full-uci
+# Update npm and install full-icu
 COPY .npmrc /usr/local/etc/npmrc
 RUN npm install --no-audit -g npm@9.9.2 full-icu@1.5.0
 
