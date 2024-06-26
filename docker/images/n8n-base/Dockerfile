@@ -1,7 +1,7 @@
 ARG NODE_VERSION=20
 
 # 1. Use a builder step to download various dependencies
-FROM node:${NODE_VERSION}-alpine as builder
+FROM node:${NODE_VERSION}-slim as builder
 
 # Install fonts
 RUN \
