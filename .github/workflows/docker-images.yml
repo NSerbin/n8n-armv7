@@ -21,3 +21,4 @@ jobs:
       linter-verbose: true
       linter-format: tty
     secrets: inherit
+
