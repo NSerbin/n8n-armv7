@@ -1,0 +1,23 @@
+name: Building Docker armv7 Image
+
+on:
+  push:
+    branches:
+      - v1.95.2-armv7
+    tags:
+    - "*"
+
+jobs:
+  docker-build-n8n:
+    uses: NSerbin/gh-pipelines/.github/workflows/docker-build.yml@main
+    with:
+      registry: dockerhub
+      docker-tag: 1.95.2
+      dockerfile-path: ./docker/images/n8n
+      docker-architecture: linux/arm/v7
+      repository-name: n8n-armv7
+      node-version: 20
+      linter-fail: true
+      linter-verbose: true
+      linter-format: tty
+    secrets: inherit
