@@ -4,6 +4,8 @@ ARG N8N_VERSION=snapshot
 # 1. Create an image to build n8n
 FROM --platform=linux/arm/v7 koopernic/n8n-base-armv7:${NODE_VERSION} AS builder
 
+RUN apk add --no-cache python3 make g++ gcc
+
 WORKDIR /src
 COPY . /src
 
